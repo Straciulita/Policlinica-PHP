@@ -159,3 +159,20 @@ header .navbar ul li a:hover {
         padding: 1rem 2rem; /* Ajustează dimensiunea butonului */
     }
 }
+
+/* Footer */
+.footer {
+    background: var(--blue); /* Culoarea de fundal */
+    color: var(--weight); /* Culoarea textului */
+    text-align: center;
+    padding: 1rem 0; /* Spațiere verticală */
+    font-size: 1.6rem; /* Dimensiunea textului */
+    position: fixed; /* Fixează footer-ul jos */
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.footer p {
+    margin: 0; /* Elimină marginile implicite */
+}

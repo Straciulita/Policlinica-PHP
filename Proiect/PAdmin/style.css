@@ -1,0 +1,183 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Variabile globale */
+/*root colors*/
+:root {
+    --blue: #19766f;
+    --black: #444d53;
+    --weight: #eaefee;
+}
+
+
+/* Resetări și stiluri de bază */
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    outline: none;
+    box-sizing: border-box;
+    transition: all var(--transition-speed) ease;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--gray);
+}
+
+/* Panglica de sus */
+/*navbar*/
+header {
+    width: 100%;
+    background: var(--weight);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+header .logo-img {
+    height:50px; /* ajustează înălțimea după nevoie, ex: 30px, 50px */
+    width: auto; /* menține proporțiile imaginii */
+    display: block; /* elimină spațiile nedorite în jurul imaginii */
+    object-fit: contain; /* păstrează conținutul complet al imaginii */
+}
+
+header .user-info {
+    color: var(--black);
+    font-size: 2rem;
+    font-weight: 500;
+}
+header .user-info span {
+    color: var(--blue);
+    font-weight: 700;
+}
+/* Sidebar fix pe stânga */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* ocupă întreaga înălțime a ecranului */
+    width: 220px; /* lățimea sidebarului */
+    background-color: #2e6a65; /* culoare de fundal */
+    padding-top: 100px; /* spațiu sub header */
+    z-index: 999;
+}
+
+/* Listele din navbar */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar ul li {
+    margin: 10px 0;
+}
+
+.navbar ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #255954;
+}
+.menu-title {
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.menu-title i {
+    font-size: 22px;
+    color: #fff;
+}
+/* Secțiunea principală de conținut */
+.content {
+    margin-left: 250px; /* Dacă navbar-ul e pe lateral, ajustează după caz */
+    padding: 40px;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+}
+
+/* Titlul principal */
+.content h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Paragraf introductiv */
+.content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Containerul pentru carduri */
+.cards {
+    margin-top: 50px; /* pentru a evita suprapunerea cu navbar-ul */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Card individual */
+.card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efect la hover pe card */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+
+/* Valoarea cardului */
+.card p {
+    font-size: 28px;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Iconița (dacă este folosită) */
+.card i {
+    font-size: 30px;
+    color: #073c1d;
+    margin-top: 10px;
+    display: block;
+}
