@@ -3,17 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main Page</title>
+    <title>Main Page-Sanavita</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to the Main Page</h1>
+        <!--Navigation Bar-->
+
+        <!--Logo name-->
+        <a href="Main.html" class="logo">
+            <img src="./Resurse/logo.png" alt="Policlinica Sanavita Logo" class="logo-img">
+        </a>
+
+
+        <!--Navigation links-->
+        <nav class="navbar">
+            <ul>
+                <li><a href="Main.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Programare.html">Appointment</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="/Proiect/LoginForm/index.html">Login</a></li>
+                <li><a href="/Proiect/LoginForm/Singin.html">Register</a></li>
+
+            </ul>
+
+        </nav>
+
+        
     </header>
-    <main>
-        <p>This is the main content area.</p>
-    </main>
-    <footer>
-        <p>&copy; 2025 Straciulita</p>
-    </footer>
+
+    <!--Main content-->
+    <section id="home" class="home">
+        <div class="row">
+            <div class="images">
+                <img src="./Resurse/doctors.png" alt="Doctor Image" class="doctor-img">
+            </div>
+
+            <div class="content">
+                <h1>Welcome to Sanavita Clinic</h1>
+                <p>Your health is our priority. We offer a wide range of medical services to ensure your well-being.</p>
+                <a href="Programare.html"><button class="button">Book an Appointment</button></a>
+            </div>   
+        </div>
+    </section>
+   
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+
 </body>
 </html>

@@ -1,0 +1,161 @@
+/*google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*root colors*/
+:root {
+    --blue: #19766f;
+    --black: #444d53;
+    --weight: #eaefee;
+}
+
+/*custom css*/
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    outline: none;
+    box-sizing: border-box;
+    transition: all linear .2s;
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+/*navbar*/
+header {
+    width: 96%;
+    background: var(--weight);
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    z-index: 1000;
+}
+
+header .logo-img {
+    height: 85px; /* ajustează înălțimea după nevoie, ex: 30px, 50px */
+    width: auto; /* menține proporțiile imaginii */
+    display: block; /* elimină spațiile nedorite în jurul imaginii */
+    object-fit: contain; /* păstrează conținutul complet al imaginii */
+}
+
+header a {
+    color: var(--black);
+}
+
+header a:hover {
+    color: var(--blue);
+}
+
+header .navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+header .navbar ul li {
+    margin: 0 1rem;
+}
+
+header .navbar ul li a {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+header .navbar ul li a:hover {
+    color: var(--blue);
+}
+
+
+/*Main*/
+.home {
+    min-height: 100vh;
+    padding-top: 20rem;
+    background: linear-gradient(to bottom, #4f8784, #ffffff); /* Gradient modern */
+}
+
+.home .row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto;
+    gap: 2rem; /* Adaugă spațiu între imagine și conținut */
+}
+
+.home .row .images img {
+    height: 75vh;
+    
+    transition: transform 0.3s ease; /* Animație pentru hover */
+}
+
+.home .row .images img:hover {
+    transform: scale(1.05); /* Mărește imaginea la hover */
+}
+
+.home .content h1 {
+    font-size: 6rem;
+    color: var(--blue);
+    margin-bottom: 3rem; /* Mai mult spațiu sub titlu */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Adaugă un efect de umbră textului */
+}
+
+.home .content p {
+    font-size: 2.2rem; /* Font puțin mai mare */
+    color: var(--black);
+    margin-bottom: 3rem; /* Mai mult spațiu sub paragraf */
+    line-height: 1.6; /* Îmbunătățește lizibilitatea */
+}
+
+.home .content button {
+    padding: 1.5rem 3rem; /* Buton mai mare */
+    background: var(--blue);
+    color: var(--weight);
+    border: none;
+    border-radius: 2rem; /* Colțuri rotunjite mai moderne */
+    font-size: 2rem;
+    cursor: pointer;
+    margin-top: 3rem; /* Mai mult spațiu deasupra butonului */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adaugă un efect de umbră */
+    transition: background 0.3s ease, transform 0.3s ease; /* Animație pentru hover */
+}
+
+.home .content button:hover {
+    background: #145a54; /* Schimbă culoarea la hover */
+    transform: translateY(-3px); /* Ridică butonul la hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Intensifică umbra */
+}
+
+/* Responsivitate pentru ecrane mici */
+@media (max-width: 768px) {
+    .home .row {
+        flex-direction: column; /* Stivuiește imaginea și conținutul pe verticală */
+        text-align: center; /* Centrează textul */
+    }
+
+    .home .row .images img {
+        height: 50vh; /* Dimensiune mai mică pentru imagine */
+    }
+
+    .home .content h1 {
+        font-size: 4.5rem; /* Diminuează dimensiunea fontului */
+    }
+
+    .home .content p {
+        font-size: 1.8rem; /* Diminuează dimensiunea fontului */
+    }
+
+    .home .content button {
+        font-size: 1.8rem; /* Diminuează dimensiunea fontului */
+        padding: 1rem 2rem; /* Ajustează dimensiunea butonului */
+    }
+}
