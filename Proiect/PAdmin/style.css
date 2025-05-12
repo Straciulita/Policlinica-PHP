@@ -1,16 +1,13 @@
-/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Variabile globale */
-/*root colors*/
 :root {
     --blue: #19766f;
     --black: #444d53;
     --weight: #eaefee;
+    --gray: #d2cfcf;
 }
 
-
-/* Resetări și stiluri de bază */
+/* Resetări de bază */
 * {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -19,7 +16,7 @@
     text-transform: capitalize;
     outline: none;
     box-sizing: border-box;
-    transition: all var(--transition-speed) ease;
+    transition: all 0.3s ease;
 }
 
 html {
@@ -35,8 +32,7 @@ body {
     background-color: var(--gray);
 }
 
-/* Panglica de sus */
-/*navbar*/
+/* Header */
 header {
     width: 100%;
     background: var(--weight);
@@ -51,10 +47,10 @@ header {
 }
 
 header .logo-img {
-    height:50px; /* ajustează înălțimea după nevoie, ex: 30px, 50px */
-    width: auto; /* menține proporțiile imaginii */
-    display: block; /* elimină spațiile nedorite în jurul imaginii */
-    object-fit: contain; /* păstrează conținutul complet al imaginii */
+    height: 50px;
+    width: auto;
+    display: block;
+    object-fit: contain;
 }
 
 header .user-info {
@@ -62,23 +58,24 @@ header .user-info {
     font-size: 2rem;
     font-weight: 500;
 }
+
 header .user-info span {
     color: var(--blue);
     font-weight: 700;
 }
-/* Sidebar fix pe stânga */
+
+/* Navbar lateral */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh; /* ocupă întreaga înălțime a ecranului */
-    width: 220px; /* lățimea sidebarului */
-    background-color: #2e6a65; /* culoare de fundal */
-    padding-top: 100px; /* spațiu sub header */
+    height: 100vh;
+    width: 220px;
+    background-color: #2e6a65;
+    padding-top: 100px;
     z-index: 999;
 }
 
-/* Listele din navbar */
 .navbar ul {
     list-style: none;
     padding: 0;
@@ -92,17 +89,28 @@ header .user-info span {
 }
 
 .navbar ul li a {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 15px 20px;
     color: #fff;
     font-size: 18px;
     text-decoration: none;
     transition: background 0.3s;
+    gap: 12px; /* spațiu între icon și text */
 }
+
+.navbar ul li a i {
+    font-size: 20px;
+    color: #fff;
+    min-width: 20px;
+    text-align: center;
+}
+
 
 .navbar ul li a:hover {
     background-color: #255954;
 }
+
 .menu-title {
     color: #fff;
     font-size: 20px;
@@ -120,37 +128,36 @@ header .user-info span {
     font-size: 22px;
     color: #fff;
 }
-/* Secțiunea principală de conținut */
+
+/* Conținut principal */
 .content {
-    margin-left: 250px; /* Dacă navbar-ul e pe lateral, ajustează după caz */
+    margin-left: 250px;
     padding: 40px;
-    background-color: #f4f4f4;
+    background-color: var(--gray);
     min-height: 100vh;
 }
 
-/* Titlul principal */
 .content h1 {
     font-size: 32px;
     margin-bottom: 10px;
     color: #333;
 }
 
-/* Paragraf introductiv */
 .content p {
     font-size: 18px;
     color: #555;
     margin-bottom: 30px;
 }
 
-/* Containerul pentru carduri */
+/* CARDURI */
+
 .cards {
-    margin-top: 50px; /* pentru a evita suprapunerea cu navbar-ul */
+    margin-top: 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* 4 pe rând */
     gap: 20px;
 }
 
-/* Card individual */
 .card {
     background-color: #fff;
     padding: 15px;
@@ -160,24 +167,63 @@ header .user-info span {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efect la hover pe card */
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 
-
-/* Valoarea cardului */
 .card p {
     font-size: 28px;
     color: #2c3e50;
     font-weight: bold;
 }
 
-/* Iconița (dacă este folosită) */
 .card i {
     font-size: 30px;
     color: #073c1d;
     margin-top: 10px;
     display: block;
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--weight); /* aceeași culoare ca headerul */
+    color: var(--black); /* culoarea textului */
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 1.6rem;
+    margin-top: auto; /* împinge footerul la final dacă pagina are conținut puțin */
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 500;
+}
+
+.footer p {
+    margin: 0;
+    font-weight: 400;
+}
+
+
+/* Responsivitate */
+@media (max-width: 992px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .navbar {
+        display: none;
+    }
 }
