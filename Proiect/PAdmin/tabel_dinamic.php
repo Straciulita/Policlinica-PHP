@@ -62,28 +62,29 @@ function afiseazaTabel($numeTabel, $search = '', $varsta_min = null, $varsta_max
     // Verificăm și afișăm rezultatele
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    if ($result && count($result) > 0) {
-        echo "<table class='generic-table'>";
-        echo "<tr>";
-        // Afișăm capul tabelului (numele coloanelor)
-        $columns = array_keys($result[0]); // Obținem cheile primului rând pentru capul tabelului
-        foreach ($columns as $col) {
-            echo "<th>" . htmlspecialchars($col) . "</th>";
-        }
-        echo "</tr>";
-
-        // Afișăm rândurile
-        foreach ($result as $row) {
-            echo "<tr onclick='handleRowClick(this)' data-id='" . $row['idPacient'] . "'>";
-            foreach ($row as $val) {
-                echo "<td>" . htmlspecialchars($val) . "</td>";
-            }
-            echo "</tr>";
-        }
-        echo "</table>";
-    } else {
-        echo "<p style='margin-top: 1rem;'>Niciun pacient găsit.</p>";
+  if ($result && count($result) > 0) {
+    echo "<div class='generic-table'><table>";
+    echo "<tr>";
+    $columns = array_keys($result[0]);
+    foreach ($columns as $col) {
+        echo "<th>" . htmlspecialchars($col) . "</th>";
     }
+    echo "<th>Acțiuni</th>";
+    echo "</tr>";
+
+    foreach ($result as $row) {
+        echo "<tr data-id='" . htmlspecialchars($row['idPacient']) . "'>";
+        foreach ($row as $key => $val) {
+            echo "<td>" . htmlspecialchars($val) . "</td>";
+        }
+        echo "<td><button class='edit-btn' onclick='editPatient(event, " . json_encode($row) . ")'><i class='fas fa-edit'></i></button></td>";
+        echo "</tr>";
+    }
+
+    echo "</table></div>"; // <- închidere aici
+} else {
+    echo "<p style='margin-top: 1rem;'>Niciun pacient găsit.</p>";
+}
 }
 
 // Răspuns pentru AJAX — doar dacă fișierul este accesat direct
@@ -99,3 +100,4 @@ if (basename(__FILE__) === basename($_SERVER['SCRIPT_FILENAME'])) {
     }
 }
 ?>
+

@@ -1,38 +1,22 @@
 <?php
-// Include fișierul care conține clasa Database
-require_once '../db.php';  // Asigură-te că calea este corectă
+require_once '../db.php';
 
-// Obține ID-ul pacientului din parametrii URL-ului
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+if (isset($_GET['cnp'])) {
+    $cnp = $_GET['cnp'];
 
-    if ($id) {
-        try {
-            // Creează instanța clasei Database și obține conexiunea
-            $db = new Database();
-            $conn = $db->conn;  // Aceasta este conexiunea PDO
+    try {
+        $stmt = $conn->prepare("DELETE FROM Pacient WHERE CNP = :cnp");
+        $stmt->bindParam(':cnp', $cnp, PDO::PARAM_STR);
 
-            // Creează SQL-ul pentru ștergere
-            $sql = "DELETE FROM pacient WHERE idPacient = :id";
-
-            // Pregătește statement-ul
-            $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-            
-            // Execută statement-ul
-            $stmt->execute();
-
-            // Redirectează înapoi la pagina principală (sau altă locație)
-            header('Location: Pacienti.php');
-            exit();
-        } catch (PDOException $e) {
-            // În caz de eroare
-            echo "Eroare: " . $e->getMessage();
+        if ($stmt->execute()) {
+            echo "succes";
+        } else {
+            echo "Eroare la ștergere.";
         }
-    } else {
-        echo "ID invalid!";
+    } catch (PDOException $e) {
+        echo "Eroare: " . $e->getMessage();
     }
 } else {
-    echo "ID nu a fost specificat!";
+    echo "CNP-ul nu a fost furnizat.";
 }
 ?>

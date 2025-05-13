@@ -1,0 +1,19 @@
+
+
+  /* Stilizare pentru butonul de adăugare pacient nou */
+        #add-employee-btn {
+            background-color: #19766f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+       #add-employee-btn:hover {
+            background-color: #19766f;
+        }
