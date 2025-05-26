@@ -249,7 +249,7 @@ header .user-info span {
 }
 
 .card {
-    background-color: #fff;
+    background-color: #f2f4f4;
     padding: 15px;
     border-radius: 16px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -277,7 +277,7 @@ header .user-info span {
 /* Stiluri pentru tabelul din div-ul #tabel-pacienti */
 #tabel-pacienti {
     margin-top: 2rem;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 /* Se aplică doar tabelelor dintr-un container .generic-table */
@@ -327,6 +327,7 @@ header .user-info span {
 #tabel-pacienti .edit-btn:hover {
     color: #0d4e4a;
 }
+
 
 
 

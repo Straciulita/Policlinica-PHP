@@ -16,7 +16,7 @@
         }
 
         #add-patient-btn:hover {
-            background-color: #19766f;
+             background-color: #12514b;
         }
 
 /* ========== MODAL EDIT PACIENT FOLOSIND ID ========== */
@@ -292,6 +292,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    background-color: #19766f;
 }
 
 /* Butonul de confirmare (Șterge) */

@@ -1,0 +1,56 @@
+main{
+    padding-top: 15rem;
+}
+
+.programare-form {
+    
+    font-size: 1.5rem;
+    background: #f3f3f3;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(25, 118, 111, 0.10);
+    padding: 2rem 2.5rem 2rem 2.5rem;
+    max-width: 400px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.programare-form label {
+    font-weight: 600;
+    color: #19766f;
+    margin-bottom: 0.2rem;
+}
+
+.programare-form input,
+.programare-form select {
+    padding: 0.6rem;
+    border: 1px solid #b2d8d8;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    background: #f9fefe;
+    transition: border 0.2s;
+}
+
+.programare-form input:focus,
+.programare-form select:focus {
+    border-color: #19766f;
+    outline: none;
+}
+
+.programare-form button {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: #19766f;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.programare-form button:hover {
+    background: #145c57;
+}

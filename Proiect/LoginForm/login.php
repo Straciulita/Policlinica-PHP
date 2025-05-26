@@ -29,15 +29,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Verificăm parola simplă (fără criptare)
             if ($password === $user['parola']) {
                 $_SESSION['user'] = $user['nume'];
+                $_SESSION['username'] = $username; // $username este cel introdus de utilizator
 
                 // Redirecționare în funcție de rol
-                if ($username === 'admin') {
-                    header("Location: ../PAdmin/index.html");
+                if ($user['nume'] === 'admin') {
+                    header("Location: ../PAdmin/index.php");
+                    exit();
+                } elseif ($user['nume'] === 'doctor') {
+                    header("Location: ../PDoctor/index.php");
                     exit();
                 } else {
-                    header("Location: ../Main-Page/Main.html");
+                    header("Location: ../Main-Page/Main.php");
                     exit();
-                }
+                } 
             } else {
                 echo "Parolă incorectă!";
             }

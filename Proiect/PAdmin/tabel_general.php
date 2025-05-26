@@ -37,7 +37,8 @@ function afiseazaTabelGeneral($numeTabel) {
                 }
 
                 // Buton de editare — trimitem datele rândului ca JSON
-                echo "<td><button class='edit-btn' onclick='editRow(" . htmlspecialchars(json_encode($row)) . ")'><i class='fas fa-edit'></i> Edit</button></td>";
+                echo "<td><button class='edit-btn' onclick='editRow(event, " . json_encode($row, JSON_HEX_APOS | JSON_HEX_QUOT) . ")'><i class='fas fa-edit'></i> Edit</button></td>";
+
                 echo "</tr>";
             }
 

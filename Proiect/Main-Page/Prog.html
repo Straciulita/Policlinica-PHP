@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Programare nouă - Policlinica Sanavita</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="Main.html" class="logo">
+            <img src="Resurse/logo.png" alt="Policlinica Sanavita Logo" class="logo-img">
+        </a>
+            <!--Navigation links-->
+        <nav class="navbar">
+            <ul>
+                <li><a href="Main.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="Prog.html">Appointment</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="/Proiect/LoginForm/index.html">Login</a></li>
+                <li><a href="/Proiect/LoginForm/Singin.html">Register</a></li>
+
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+        <section>
+        <form action="submit_programare.php" method="post" class="programare-form" style="max-width:400px;margin:auto;">
+            <h1>Formular programare</h1>
+            <label for="nume">Nume:</label>
+            <input type="text" id="nume" name="nume" required>
+
+            <label for="prenume">Prenume:</label>
+            <input type="text" id="prenume" name="prenume" required>
+
+            <label for="telefon">Telefon:</label>
+            <input type="tel" id="telefon" name="telefon" required pattern="[0-9]{10}">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+
+            <label for="data">Data programării:</label>
+            <input type="date" id="data" name="data" required>
+
+            <label for="ora">Ora programării:</label>
+            <input type="time" id="ora" name="ora" required>
+
+            <label for="serviciu">Serviciu dorit:</label>
+            <select id="serviciu" name="serviciu" required>
+                <option value="">Alege serviciul</option>
+                <option value="1">Consultație</option>
+                <option value="2">Analize</option>
+                <option value="3">Ecografie</option>
+                <option value="4">Vaccinare</option>
+                <!-- Completează cu serviciile reale din baza de date -->
+            </select>
+
+            <button type="submit">Programează-mă</button>
+        </form>
+        </section>
+    </main>
+</body>
+</html>

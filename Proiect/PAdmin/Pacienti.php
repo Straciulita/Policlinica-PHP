@@ -9,14 +9,14 @@ require_once 'tabel_dinamic.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pacienți - Admin Panel</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="pacienti.css">
-    <link rel="stylesheet" href="angajati.css">
+    <link rel="stylesheet" href="pacienti.css?v=1.0">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header>
-        <a href="/Proiect/Main-Page/Main.html" class="logo">
+        <a href="/Proiect/Main-Page/Main.php" class="logo">
             <img src="/Proiect/Main-Page/Resurse/logo.png" alt="Policlinica Sanavita Logo" class="logo-img">
         </a>
         <div class="user-info">
@@ -29,12 +29,14 @@ require_once 'tabel_dinamic.php';
         <nav class="navbar">
             <h2 class="menu-title"><i class='bx bxs-cog'></i> Admin Dashboard</h2>
             <ul>
-                <li><a href="index.html"><i class='bx bxs-dashboard'></i> Dashboard</a></li>
+                <li><a href="index.php"><i class='bx bxs-dashboard'></i> Dashboard</a></li>
                 <li><a href="Pacienti.php"><i class='bx bxs-user-detail'></i> Pacienți</a></li>
                 <li><a href="Angajati.php"><i class='bx bxs-id-card'></i> Angajați</a></li>
                 <li><a href="Servicii.php"><i class='bx bxs-calendar'></i> Servicii</a></li>
-                <li><a href="Cabinete.html"><i class='bx bxs-clinic'></i> Cabinete</a></li>
-                <li><a href="Rapoarte.html"><i class='bx bxs-report'></i> Rapoarte</a></li>
+                <li><a href="Cabinete.php"><i class='bx bxs-clinic'></i> Cabinete</a></li>
+                <li>
+                <a href="../LoginForm/index.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </li>
             </ul>
         </nav>
     </section>
@@ -59,25 +61,37 @@ require_once 'tabel_dinamic.php';
                 </form>
             </div>
             <script>
-                document.getElementById("search").addEventListener("input", function () {
-                    const query = this.value;
-                    const varstaMin = document.getElementById("varsta_min").value;
-                    const varstaMax = document.getElementById("varsta_max").value;
-                    const asigurat = document.getElementById("asigurat").value;
+               // Filtrare live când scrii în câmpul search
+document.getElementById("search").addEventListener("input", function () {
+    filtreazaPacienti();
+});
 
-                    const xhr = new XMLHttpRequest();
-                    xhr.open("GET", "tabel_dinamic.php?search=" + encodeURIComponent(query) +
-                        "&varsta_min=" + encodeURIComponent(varstaMin) +
-                        "&varsta_max=" + encodeURIComponent(varstaMax) +
-                        "&asigurat=" + encodeURIComponent(asigurat), true);
+// Filtrare când se face submit pe formular (când apeși pe butonul de căutare)
+document.querySelector('.search-form').addEventListener('submit', function(e) {
+    e.preventDefault();  // previne refresh-ul paginii
+    filtreazaPacienti();
+});
 
-                    xhr.onload = function () {
-                        if (xhr.status === 200) {
-                            document.getElementById("tabel-pacienti").innerHTML = xhr.responseText;
-                        }
-                    };
-                    xhr.send();
-                });
+// Funcție comună care face AJAX și actualizează tabelul
+function filtreazaPacienti() {
+    const query = document.getElementById("search").value;
+    const varstaMin = document.getElementById("varsta_min").value;
+    const varstaMax = document.getElementById("varsta_max").value;
+    const asigurat = document.getElementById("asigurat").value;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", "tabel_dinamic.php?search=" + encodeURIComponent(query) +
+        "&varsta_min=" + encodeURIComponent(varstaMin) +
+        "&varsta_max=" + encodeURIComponent(varstaMax) +
+        "&asigurat=" + encodeURIComponent(asigurat), true);
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            document.getElementById("tabel-pacienti").innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send();
+}
             </script>
 
             <div class="actions">

@@ -75,6 +75,40 @@ header .navbar ul li a:hover {
     color: var(--blue);
 }
 
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-left: auto;
+    font-size: 6rem; /* Ajustează la fel ca .navbar li a */
+}
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #19766f;
+    font-weight: 500;
+    font-size: 2rem; /* La fel ca în navbar */
+}
+
+.btn-login, .btn-logout {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #19766f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.4rem 1rem;
+    text-decoration: none;
+    transition: background 0.2s;
+    cursor: pointer;
+    font-size: 2rem; /* La fel ca în navbar */
+}
+.btn-login:hover, .btn-logout:hover {
+    background: #145a53;
+}
 
 /*Main*/
 .home {
@@ -167,7 +201,7 @@ header .navbar ul li a:hover {
     text-align: center;
     padding: 1rem 0; /* Spațiere verticală */
     font-size: 1.6rem; /* Dimensiunea textului */
-    position: fixed; /* Fixează footer-ul jos */
+   
     bottom: 0;
     width: 100%;
     z-index: 1000;

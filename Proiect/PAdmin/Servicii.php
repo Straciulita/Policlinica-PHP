@@ -16,7 +16,7 @@
 <body>
     <header>
         <!--Logo name-->
-        <a href="/Proiect/Main-Page/Main.html" class="logo">
+        <a href="/Proiect/Main-Page/Main.php" class="logo">
             <img src="/Proiect/Main-Page/Resurse/logo.png" alt="Policlinica Sanavita Logo" class="logo-img">
         </a>
         <!--User info-->
@@ -31,12 +31,15 @@
         <nav class="navbar">
             <h2 class="menu-title"><i class='bx bxs-cog'></i> Admin Dashboard</h2>
             <ul>
-                <li><a href="index.html"><i class='bx bxs-dashboard'></i> Dashboard</a></li>
+                <li><a href="index.php"><i class='bx bxs-dashboard'></i> Dashboard</a></li>
                 <li><a href="Pacienti.php"><i class='bx bxs-user-detail'></i> Pacienți</a></li>
                 <li><a href="Angajati.php"><i class='bx bxs-id-card'></i> Angajați</a></li>
                 <li><a href="Servicii.php"><i class='bx bxs-calendar'></i> Servicii</a></li>
-                <li><a href="Cabinete.html"><i class='bx bxs-clinic'></i> Cabinete</a></li>
-                <li><a href="Rapoarte.html"><i class='bx bxs-report'></i> Rapoarte</a></li>
+                <li><a href="Cabinete.php"><i class='bx bxs-clinic'></i> Cabinete</a></li>
+                <li>
+                <a href="../LoginForm/index.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </li>
+                
             </ul>
         </nav>
     </section>
@@ -78,7 +81,7 @@
     <div id="service-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('service-modal')">&times;</span>
-            <h2 id="modal-title">Adaugă/Modifică serviciu</h2>
+            <h2 id="modal-title">Adaugă serviciu</h2>
             <form id="service-form" method="POST" action="save_service.php">
                 <input type="hidden" id="service-id" name="id">
                 <label for="denumire">Denumire:</label>

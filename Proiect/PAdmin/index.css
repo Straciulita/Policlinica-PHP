@@ -1,0 +1,96 @@
+/* Zona grafice dashboard */
+.charts-section {
+    background: var(--weight, #eaefee);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(25,118,111,0.08);
+    padding: 2.5rem 2rem 2rem 2rem;
+    margin-bottom: 3rem;
+  
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.charts-section h2 {
+    font-size: 2.4rem;
+    color: var(--blue, #19766f);
+    margin-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#chart-options {
+    background: var(--gray, #d2cfcf);
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#chart-options label {
+    font-size: 1.5rem;
+    color: var(--black, #444d53);
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+#chart-options select,
+#chart-options input[type="date"] {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--blue, #19766f);
+    border-radius: 5px;
+    background: #fff;
+    color: var(--black, #444d53);
+    outline: none;
+    transition: border 0.2s;
+    margin-bottom: 0;
+}
+
+#chart-options select:focus,
+#chart-options input[type="date"]:focus {
+    border: 1.5px solid var(--blue, #19766f);
+}
+
+#show-chart-btn {
+    background: var(--blue, #19766f);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 2.2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 0;
+}
+
+#show-chart-btn:hover {
+    background: #145a54;
+}
+
+#dashboardChart {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(25,118,111,0.07);
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* Responsive pentru grafice și formular */
+@media (max-width: 700px) {
+    .charts-section {
+        padding: 1.2rem 0.5rem;
+    }
+    #chart-options {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+    }
+    #dashboardChart {
+        max-width: 100%;
+    }
+}
